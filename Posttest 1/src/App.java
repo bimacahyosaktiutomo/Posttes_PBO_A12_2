@@ -134,6 +134,7 @@ public class App {
             }
             System.out.println("==============================================");
             System.out.println("Masukan Laptop yang ingin dihapus : 0 Untuk Kembali");
+            System.out.print("> > ");
             try {                
                 int index = scanner.nextInt();
                 if (index > 0 && index <= ListLaptop.size()) {
@@ -161,23 +162,20 @@ public class App {
     static void Ubah_Laptop(int index) throws Exception {
         String input;
         do {
-            System.out.println("Nama    : " + ListLaptop.get(index).nama);
-            System.out.println("Merek   : " + ListLaptop.get(index).merek);
-            System.out.println("Harga   : " + ListLaptop.get(index).harga);
-            System.out.println("Stok    : " + ListLaptop.get(index).stok);
-            System.out.println("==================================");
-            System.out.println("1. Ubah Nama");
-            System.out.println("2. Ubah Merk");
-            System.out.println("3. Ubah Harga");
-            System.out.println("4. Ubah Stok");
+            cls();
+            System.out.println("Pilih atribut yang ingin diubah :");
+            System.out.println("1. Nama    : " + ListLaptop.get(index).nama);
+            System.out.println("2. Merek   : " + ListLaptop.get(index).merek);
+            System.out.println("3. Harga   : " + ListLaptop.get(index).harga);
+            System.out.println("4. Stok    : " + ListLaptop.get(index).stok);
             System.out.println("5. Ubah Semua");
             System.out.println("0. Kembali");
-            System.out.println("======================");
+            System.out.println("==================================");
             input = scanner.nextLine();
             switch (input) {
                 case "1":
                     System.out.println("Ketik 'batal' untuk membatalkan");
-                    System.out.print("Masukan Nama Baru :");
+                    System.out.print("Masukan Nama Baru : ");
                     String nama = scanner.nextLine();
                     if (nama.equals("batal")){
                         break;
@@ -187,7 +185,7 @@ public class App {
                     break;
                 case "2":
                     System.out.println("Ketik 'batal' untuk membatalkan");
-                    System.out.print("Masukan Merek Baru :");
+                    System.out.print("Masukan Merek Baru : ");
                     String merek = scanner.nextLine();
                     if (merek.equals("batal")){
                         break;
@@ -197,7 +195,7 @@ public class App {
                     break;
                 case "3":
                     System.out.println("Ketik 'batal' untuk membatalkan");
-                    System.out.print("Masukan Harga Baru :");
+                    System.out.print("Masukan Harga Baru : ");
                     String harga = scanner.nextLine();
                     if (harga.equals("batal")){
                         break;
@@ -207,7 +205,7 @@ public class App {
                     break;
                 case "4":
                     System.out.println("Ketik 'batal' untuk membatalkan");
-                    System.out.print("Masukan Stok Baru :");
+                    System.out.print("Masukan Stok Baru : ");
                     String stok = scanner.nextLine();
                     if (stok.equals("batal")){
                         break;
@@ -217,22 +215,22 @@ public class App {
                     break;
                 case "5":
                     System.out.println("Ketik 'batal' untuk membatalkan");
-                    System.out.print("Masukan Nama Baru :");
+                    System.out.print("Masukan Nama Baru : ");
                     nama = scanner.nextLine();
                     if (nama.equals("batal")){
                         break;
                     }
-                    System.out.print("Masukan Merek Baru :");
+                    System.out.print("Masukan Merek Baru : ");
                     merek = scanner.nextLine();
                     if (merek.equals("batal")){
                         break;
                     }
-                    System.out.print("Masukan Harga Baru :");
+                    System.out.print("Masukan Harga Baru : ");
                     harga = scanner.nextLine();
                     if (harga.equals("batal")){
                         break;
                     }
-                    System.out.print("Masukan Stok Baru :");
+                    System.out.print("Masukan Stok Baru : ");
                     stok = scanner.nextLine();
                     if (stok.equals("batal")){
                         break;
@@ -250,11 +248,12 @@ public class App {
 
     static void Lihat_laptop(int index) throws Exception {
         System.out.println("=====================================");
-        System.out.println("Nama : " + ListLaptop.get(index).nama);
+        System.out.println("Nama  : " + ListLaptop.get(index).nama);
         System.out.println("Merek : " + ListLaptop.get(index).merek);
         System.out.println("Harga : " + ListLaptop.get(index).harga);
-        System.out.println("Stok : " + ListLaptop.get(index).stok);
+        System.out.println("Stok  : " + ListLaptop.get(index).stok);
         System.out.println("=====================================");
+        System.out.println("Tekan enter untuk kembali");
         scanner.nextLine();
         Home();
     }
