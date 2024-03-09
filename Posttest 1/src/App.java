@@ -251,9 +251,9 @@ public class App {
     static void Lihat_laptop(int index) throws Exception {
         System.out.println("=====================================");
         System.out.println("Nama : " + ListLaptop.get(index).nama);
-        System.out.println("Nama : " + ListLaptop.get(index).merek);
-        System.out.println("Nama : " + ListLaptop.get(index).harga);
-        System.out.println("Nama : " + ListLaptop.get(index).stok);
+        System.out.println("Merek : " + ListLaptop.get(index).merek);
+        System.out.println("Harga : " + ListLaptop.get(index).harga);
+        System.out.println("Stok : " + ListLaptop.get(index).stok);
         System.out.println("=====================================");
         scanner.nextLine();
         Home();
