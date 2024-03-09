@@ -152,6 +152,7 @@ public class App {
         String input;
         do {
             cls();
+            Laptop UbahLaptop = ListLaptop.get(index);
             System.out.println("Pilih atribut yang ingin diubah :");
             System.out.println("1. Nama    : " + ListLaptop.get(index).nama);
             System.out.println("2. Merek   : " + ListLaptop.get(index).merek);
@@ -169,8 +170,7 @@ public class App {
                     if (nama.equals("batal")){
                         break;
                     }
-                    Laptop NewLaptop = new Laptop(nama, ListLaptop.get(index).merek, ListLaptop.get(index).harga, ListLaptop.get(index).stok);
-                    ListLaptop.set(index, NewLaptop);
+                    UbahLaptop.nama = nama;
                     break;
                 case "2":
                     System.out.println("Ketik 'batal' untuk membatalkan");
@@ -179,8 +179,7 @@ public class App {
                     if (merek.equals("batal")){
                         break;
                     }
-                    NewLaptop = new Laptop( ListLaptop.get(index).harga,merek, ListLaptop.get(index).harga, ListLaptop.get(index).stok);
-                    ListLaptop.set(index, NewLaptop);
+                    UbahLaptop.merek = merek;
                     break;
                 case "3":
                     System.out.println("Ketik 'batal' untuk membatalkan");
@@ -189,8 +188,7 @@ public class App {
                     if (harga.equals("batal")){
                         break;
                     }
-                    NewLaptop = new Laptop( ListLaptop.get(index).harga,ListLaptop.get(index).merek, harga, ListLaptop.get(index).stok);
-                    ListLaptop.set(index, NewLaptop);
+                    UbahLaptop.harga = harga;
                     break;
                 case "4":
                     System.out.println("Ketik 'batal' untuk membatalkan");
@@ -199,8 +197,7 @@ public class App {
                     if (stok.equals("batal")){
                         break;
                     }
-                    NewLaptop = new Laptop( ListLaptop.get(index).harga,ListLaptop.get(index).merek, ListLaptop.get(index).harga, stok);
-                    ListLaptop.set(index, NewLaptop);
+                    UbahLaptop.stok = stok;
                     break;
                 case "5":
                     System.out.println("Ketik 'batal' untuk membatalkan");
@@ -224,7 +221,7 @@ public class App {
                     if (stok.equals("batal")){
                         break;
                     }
-                    NewLaptop = new Laptop(nama, merek, harga, stok);
+                    Laptop NewLaptop = new Laptop(nama, merek, harga, stok);
                     ListLaptop.set(index, NewLaptop);
                     break;
                 default:
