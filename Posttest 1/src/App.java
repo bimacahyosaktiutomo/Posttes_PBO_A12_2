@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
@@ -43,20 +42,17 @@ public class App {
                 System.out.println("Pilih laptop yang ingin di ubah : 0 Untuk Kembali");
                 System.out.print("> > ");
                 try {                    
-                    int index = scanner.nextInt();
+                    int index = Integer.parseInt(scanner.nextLine());
                     if (index > 0 && index <= ListLaptop.size()) {
-                        scanner.nextLine();
                         Ubah_Laptop(index-1);
                     } else if(index == 0) {
-                        scanner.nextLine();
                         break;
                     }else {
                         System.out.println("Data tidak tersedia");
-                        scanner.nextLine();
+                        TimeUnit.SECONDS.sleep(1);
                     }
-                } catch (InputMismatchException e) {
+                } catch (NumberFormatException e) {
                     System.out.println("Invalid input");
-                    scanner.nextLine();
                     TimeUnit.SECONDS.sleep(1);
                 }
             }
@@ -77,20 +73,17 @@ public class App {
                 System.out.println("Pilih laptop yang ingin di lihat : 0 Untuk Kembali");
                 System.out.print("> > ");
                 try {                    
-                    int index = scanner.nextInt();
+                    int index = Integer.parseInt(scanner.nextLine());
                     if (index > 0 && index <= ListLaptop.size()) {
-                        scanner.nextLine();
                         Lihat_laptop(index-1);
                     } else if(index == 0) {
-                        scanner.nextLine();
                         break;
                     }else {
                         System.out.println("Data tidak tersedia");
-                        scanner.nextLine();
+                        TimeUnit.SECONDS.sleep(1);
                     }
-                } catch (InputMismatchException e) {
+                } catch (NumberFormatException e) {
                     System.out.println("Invalid input");
-                    scanner.nextLine();
                     TimeUnit.SECONDS.sleep(1);
                 }
             }
@@ -136,24 +129,20 @@ public class App {
             System.out.println("Masukan Laptop yang ingin dihapus : 0 Untuk Kembali");
             System.out.print("> > ");
             try {                
-                int index = scanner.nextInt();
+                int index = Integer.parseInt(scanner.nextLine());
                 if (index > 0 && index <= ListLaptop.size()) {
                     ListLaptop.remove(index-1);
                     System.out.println("Laptop berhasil dihapus");
-                    scanner.nextLine();
                     TimeUnit.SECONDS.sleep(1);
                     Home();
                 } else if(index == 0) {
-                    scanner.nextLine();
                     Home();
                 }else {
                     System.out.println("Data tidak tersedia");
-                    scanner.nextLine();
                     TimeUnit.SECONDS.sleep(1);
                 }
-            } catch (InputMismatchException e) {
+            } catch (NumberFormatException e) {
                 System.out.println("Invalid input");
-                scanner.nextLine();
                 TimeUnit.SECONDS.sleep(1);
             }
         }
